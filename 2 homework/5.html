@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
@@ -29,10 +31,82 @@ Infinity делать не нужно, однако, в случае если б
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
+    /**
+      * Возвращает результат действия между arg1 и arg2 указанного в operation
+      * @param {number} arg1 - первое число
+      * @param {number} arg2 - второе число
+      * @param {string} operation - Действие
+      * @returns {number} результат
+      */
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    function mathOperation(arg1, arg2, operation) {
+      if (operation === `+`) {
+        return sum(arg1, arg2);
+      } else if (operation === `-`) {
+        return difference(arg1, arg2);
+      } else if (operation === `*`) {
+        return multiplication(arg1, arg2);
+      } else if (operation === `/`) {
+        return dividing(arg1, arg2);
+      } else {
+        return NaN;
+      }
+    }
+
+
+    /**
+     * Returns the sum of a and b
+     * @param {number} a
+     * @param {number} b
+     * @returns {number}
+     */
+    function sum(a, b) {
+      return a + b;
+    }
+
+    /**
+     * Returns the difference of a and b
+     * @param {number} a
+     * @param {number} b
+     * @returns {number}
+     */
+    function difference(a, b) {
+      if (a > b) {
+        return a - b;
+      } else {
+        return b - a;
+      }
+
+    }
+
+    /**
+    * Returns the multiplication of a and b
+    * @param {number} a
+    * @param {number} b
+    * @returns {number}
+    */
+    function multiplication(a, b) {
+      return a * b;
+    }
+
+    /**
+     * Returns the dividing  of a and b
+     * @param {number} a
+     * @param {number} b
+     * @returns {number}
+     */
+    function dividing(a, b) {
+      return a / b;
+    }
+
+    console.log(mathOperation(5, 3, "+"));
+    console.log(mathOperation(5, 3, ":)"));
+    console.log(mathOperation(5, 3, "-"));
+    console.log(mathOperation(5, 3, "*"));
+
+  </script>
 </body>
+
 </html>
